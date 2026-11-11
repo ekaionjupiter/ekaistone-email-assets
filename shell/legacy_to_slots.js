@@ -36,7 +36,7 @@ function legacyToSlots(html) {
   const clean = (t) => t.replace(/\s+/g, ' ').trim();
   const isBlock = (el) => el.tag && BLOCK[el.tag];
   const hasBlockKid = (el) => el.kids && el.kids.some((k) => (k.tag && isBlock(k)) || hasBlockKid(k));
-  const LIME = /a4ed07|b8f53a/;
+  const LIME = /background(-color)?\s*:\s*#(a4ed07|b8f53a)|bgcolor:#(a4ed07|b8f53a)/;
   const isBtn = (el, parent) => el.tag === 'a' && (LIME.test(style(el)) || (parent && LIME.test(style(parent))));
   const inl = (el) => {
     if (el.text !== undefined) return el.text.replace(/</g, '&lt;');
@@ -130,8 +130,10 @@ function legacyToSlots(html) {
   });
   // "Sign in with this email..." reads best right under the button: keep it as the last line
   out.body_html = parts.join('\n');
-  const firstP = kept.find((b) => b.type === 'p');
-  out.preheader = firstP ? clean((firstP.text || '').slice(0, 140)) : '';
+  const ps = kept.filter((b) => b.type === 'p' && (b.text || '').length > 0);
+  const firstP = ps.find((b) => !/^(hi|hey|hello)\b[^.!?]{0,30},?$/i.test(b.text || '')) || ps[0];
+  const pre = firstP ? clean(firstP.text || '') : '';
+  out.preheader = pre.length <= 140 ? pre : pre.slice(0, 140).replace(/\s+\S*$/, '') + '...';
   return out;
 }
 if (typeof module !== 'undefined') module.exports = { legacyToSlots };

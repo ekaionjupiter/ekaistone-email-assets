@@ -1022,5 +1022,35 @@
    "kind": "client",
    "subject": "everything on the ladder, one last time"
   }
+ },
+ {
+  "id": "6af4b5f93bfa59a22cc4157a",
+  "name": "PAID · 01 · your Discovery Call time is open again",
+  "slots": {
+   "subject": "Your Discovery Call time is open again",
+   "preheader": "Calls are booked after payment. Here's the link to book it again.",
+   "eyebrow": "Time released",
+   "headline": "Your Discovery Call time",
+   "headline_accent": "is open again.",
+   "kind": "client",
+   "body_html": "<p>Hi {{contact.first_name}},</p><p>Thanks for picking a time for a Discovery Call with me. Calls are booked after payment, and we couldn't find a payment for this booking, so the time is open again.</p><p>It's $150 for 30 minutes, credited toward your build if you buy it within 14 days. Right after checkout you'll pick your time on the calendar.</p><p>Already paid with a different email? Just reply and we'll put your time back.</p>",
+   "button_label": "Pay and book my call",
+   "button_url": "https://www.fanbasis.com/agency-checkout/jupiter-revenue-systems/2lVk1"
+  }
+ },
+ {
+  "id": "6af4b5f96291c3dcbe476cde",
+  "name": "PAID · 02 · your Strategy Session time is open again",
+  "slots": {
+   "subject": "Your Strategy Session time is open again",
+   "preheader": "Your time was held for 30 minutes. Here's the link to book it again.",
+   "eyebrow": "Time released",
+   "headline": "Your Strategy Session time",
+   "headline_accent": "is open again.",
+   "kind": "client",
+   "body_html": "<p>Hi {{contact.first_name}},</p><p>Thanks for picking a time for a Strategy Session with me. Your time was held for 30 minutes, and we couldn't find a payment for it, so it's open again.</p><p>It's $750 for 60 minutes with me, for clarity and alignment. Pick a new time, then pay to confirm.</p><p>Already paid with a different email? Just reply and we'll put your time back.</p>",
+   "button_label": "Pick a new time",
+   "button_url": "https://ekaistone.com/strategy-session"
+  }
  }
 ]
